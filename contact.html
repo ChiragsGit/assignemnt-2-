@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <style>
+        /*all images will be this specific size on page*/
+        img {
+            width: 300px;
+        }
+
+        /*removed bullet points*/
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*changed navigation bar to make it look pretty*/
+        nav ul {
+            position: relative;
+            top: 0;
+            height: 100px;
+            display:flex;
+            align-items: center;
+            font-size: 1.2em;
+            z-index: 999;
+            gap: 1em;
+            list-style-type: none;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 0 1em;
+            overflow: hidden;
+            background-color: rgb(105, 105, 105);
+            background-image: url(./Images/tj-dragotta-Gl0jBJJTDWs-unsplash.jpg);
+            background-position: center;
+        }
+
+       nav li {
+            float: left;
+        }
+
+       nav li a {
+            display: block;
+            color: rgb(255, 145, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to blue on hover */
+        nav li a:hover {
+            background-color: rgb(30, 135, 255);
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            padding:3em 3em;
+        }
+
+
+        .active {
+            background-color: #a361d8;
+            /* Shows which is the Active Navigation Link */
+        }
+
+        /* Default colors */
+        body {
+            --text-color: #222;
+            --bkg-color: #fff;
+        }
+
+        /* Dark theme colors */
+        body.dark-theme {
+            --text-color: #eee;
+            --bkg-color: #121212;
+        }
+
+        /* Styles for users who prefer dark mode at the OS level */
+        @media (prefers-color-scheme: dark) {
+
+            /* defaults to dark theme */
+            body {
+                --text-color: #eee;
+                --bkg-color: #121212;
+            }
+
+            /* Override dark mode with light mode styles if the user decides to swap */
+            body.light-theme {
+                --text-color: #222;
+                --bkg-color: #fff;
+            }
+        }
+
+        input[name=firstName] {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        input[name=lastName] {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        input[type=email] {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+
+        textarea[name=message] {
+            border: 2px solid red;
+            border-radius: 4px;
+        }
+
+        select {
+            width: 20;
+            padding: 1px 1px;
+            border: 2px solid red;
+            border-radius: 4px;
+            background-color: #f1f1f1;
+        }
+
+        input[type=submit],
+        input[type=reset] {
+            background-color: rgb(30, 135, 255);
+            border: none;
+            color: white;
+            padding: 16px 30px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="./about.html">About Me</a>
+                </li>
+
+                <li>
+                    <a href="./">Contact Me</a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <h1>Contact Me</h1>
+
+        <p>You can reach me via email at chirags@hotmail.ca or via the form below.</p>
+
+    </header>
+
+    <main>
+        <form action="./thanks.html" method="post" name="Contact Me" netlify>
+            <fieldset>
+                <legend>Your Information</legend>
+                <div>
+                    <label for="firstName"><i>First Name</i></label><br>
+                    <input type="text" name="firstName" id="firstName" required maxlength="15" minlength="2"
+                        placeholder="Chirag"><br>
+                    <small>Required!</small>
+                </div>
+
+                <div>
+                    <label for="lasttName"><i>Last Name</i></label><br>
+                    <input type="text" name="lastName" id="lastName" required maxlength="25" minlength="2"
+                        placeholder="Sabharwal"><br>
+                    <small>Required!</small>
+                </div>
+
+                <div>
+                    <label for="company"><i>Company:</i></label><br>
+                    <input type="text" name="company" id="company" maxlength="50" minlength="2"
+                        placeholder="Google"><br>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Contact Option</legend>
+                <div>
+                    <label for="email"><i>Email</i></label><br>
+                    <input type="email" name="email" id="email" required placeholder="chirags@hotmail.ca"><br>
+                    <small>Required!</small>
+                </div>
+
+                <div>
+                    <label for="tel"><i>Phone:</i></label><br>
+                    <input type="tel" name="tel" id="tel" placeholder="1 (555)555-5555">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Inquiry</legend>
+                <div>
+                    <label for="inquiryType"><i>What is your inquiry about?</i></label><br>
+                    <select name="inquiryType" id="inquiryType" required>
+                        <option value="employment"> Employment Opportunity</option>
+                        <option value="business"> Business Opportunity</option>
+                        <option value="freelance"> Freelance Inquiry</option>
+                        <option value="general" selected> General Inquiry</option>
+                    </select><br>
+                    <small>Required!</small>
+                </div>
+
+                <div>
+                    <label for="message"><i>Your Message:</i></label><br>
+                    <textarea name="message" id="message" cols="30" rows="10" required
+                        placeholder="Your inquiry here"> </textarea><br>
+                    <small>Required!</small>
+                </div>
+            </fieldset>
+            <br>
+            <div>
+                <input type="Submit" value="Submit Inquiry">
+                <input type="Reset" value="Reset">
+            </div>
+            <br>
+        </form>
+    </main>
+
+    <footer> &copy;2022 Chirag Sabharwal</footer>
+
+</body>
+
+</html>
